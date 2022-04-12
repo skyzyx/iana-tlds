@@ -41,6 +41,6 @@ The TLD list itself (including the JSON-formatted `tlds.json` file) are made ava
 
 ## Inspiration
 
-This is a port of the generation bits of [`stephenmathieson/node-tlds`](https://github.com/stephenmathieson/node-tlds) to Go. The original package suffers from the issues discussed in “[NPM & left-pad: Have We Forgotten How To Program?](https://www.davidhaney.io/npm-left-pad-have-we-forgotten-how-to-program/)”, including depending on multiple third-party packages that are utterly unnecessary — even in JavaScript/Node.js.
+This is a port of the generation bits of [`stephenmathieson/node-tlds`](https://github.com/stephenmathieson/node-tlds) to Go. The original package suffers from the issues discussed in “[npm & left-pad: Have We Forgotten How To Program?](https://www.davidhaney.io/npm-left-pad-have-we-forgotten-how-to-program/)”, including depending on multiple third-party packages that are utterly unnecessary — even in JavaScript/Node.js.
 
 I wanted to provide something more reliable, with no dependencies outside the standard library.
