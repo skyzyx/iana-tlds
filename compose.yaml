@@ -1,0 +1,8 @@
+services:
+  builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: iana-tlds
+    volumes:
+      - $PWD:/workspace:rw
