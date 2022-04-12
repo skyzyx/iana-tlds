@@ -2,6 +2,8 @@
 
 List of TLDs from [ICANN](https://www.icann.org/resources/pages/tlds-2012-02-25-en).
 
+→ The list is **[here](https://github.com/skyzyx/iana-tlds/raw/main/tlds.json)** ←
+
 ## Usage
 
 Grab the `tlds.json` file from this repo and use it however you want.
