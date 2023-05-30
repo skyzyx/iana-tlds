@@ -8,6 +8,8 @@ List of TLDs from [ICANN](https://www.icann.org/resources/pages/tlds-2012-02-25-
 
 Grab the `tlds.json` file from this repo and use it however you want.
 
+The file is re-generated weekly on Saturday at 9:41am UTC.
+
 ## Building without Developing
 
 * Docker Engine + Docker Compose (both come with Docker Desktop)
