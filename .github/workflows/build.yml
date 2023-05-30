@@ -1,0 +1,42 @@
+name: Build TLD list
+
+on:
+  push:
+    branches:
+      - main
+      - features/**
+      - dependabot/**
+  pull_request:
+    branches:
+      - main
+  schedule:
+      # https://crontab.guru/#41_9_*_*_6
+    - cron: "41 9 * * 6"
+
+jobs:
+  docker:
+    timeout-minutes: 2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v3
+
+      - name: Build the container and run the generator
+        run: docker-compose up -d
+
+      - name: Git config
+        run: |
+          git config --global user.name "Ryan Parman (Automated)"
+          git config --global user.email "ryan@ryanparman.com"
+          git pull --rebase --autostash
+
+      - name: Git commit
+        run: |
+          if [[ "$(git status -sb | wc -l)" == "1" ]]; then
+            echo "No changes to commit."
+          else
+            git add .
+            git commit -m "Automated commit: $(date +"%Y-%m-%dT%T%z")"
+            git push origin main
+          fi
