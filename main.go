@@ -45,7 +45,7 @@ func main() {
 
 	sort.Strings(tldsRaw)
 
-	b, err := json.Marshal(tldsRaw)
+	b, err := json.MarshalIndent(tldsRaw, "", "  ")
 	if err != nil {
 		log.Fatal(err)
 	}
