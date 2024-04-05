@@ -1,4 +1,4 @@
-FROM golang:1-alpine
+FROM golang:1-alpine@sha256:cdc86d9f363e8786845bea2040312b4efa321b828acdeb26f393faa864d887b0
 
 RUN apk add --no-cache make nodejs wget
 

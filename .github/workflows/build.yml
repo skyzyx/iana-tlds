@@ -13,14 +13,24 @@ on:
       # https://crontab.guru/#41_9_*_*_6
     - cron: "41 9 * * 6"
 
+permissions:
+  contents: read
+
 jobs:
   docker:
+    permissions:
+      contents: write  # for Git to git push
     timeout-minutes: 2
     runs-on: ubuntu-latest
 
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit
+
       - name: Checkout the code
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Build the container and run the generator
         run: docker compose up
