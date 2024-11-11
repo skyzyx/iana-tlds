@@ -57,5 +57,6 @@
   },
   "terraform-ls.experimentalFeatures": {
     "validateOnSave": true
-  }
+  },
+  "sarif-viewer.connectToGithubCodeScanning": "on"
 }
