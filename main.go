@@ -1,3 +1,4 @@
+// Package main is the primary application.
 package main
 
 import (
@@ -28,6 +29,7 @@ func main() {
 	}
 
 	tldsRaw := strings.Split(string(content), "\n")
+
 	tldsRaw = tldsRaw[1 : len(tldsRaw)-1]
 
 	tldsRaw = mapper(tldsRaw, func(s string) string {
